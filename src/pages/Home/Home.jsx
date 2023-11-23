@@ -24,7 +24,7 @@ function Home() {
       </div>
 
       <div className=" flex flex-col md:flex-row">
-        <h1 className="text-4xl font-medium w-72" color="gray">
+        <h1 className="text-4xl font-medium w-72 text-color">
           Simply Unique/ Simply Better.
         </h1>
         <h1 className="text-sm font-semibold color-[#6C7275] ">
