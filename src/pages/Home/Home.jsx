@@ -5,14 +5,16 @@ import HeroText from "./Herotext";
 import Services from "./Services";
 import Discount from "./components/Discount";
 import Link from "./components/Link";
-// import Singlecard from "./components/SingleCard";
+import Catigories from "./components/Catigories";
+import ProductList from "../../components/ProductsList/ProductsList";
 
 function Home() {
   return (
     <div className="  max-w-[1440px]  mx-auto  ">
       <First />
       <HeroText />
-      {/* <Singlecard /> */}
+      <Catigories />
+      <ProductList />
       <Services />
       <Discount />
       <Article />
