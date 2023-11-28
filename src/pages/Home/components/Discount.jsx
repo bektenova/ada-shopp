@@ -4,10 +4,7 @@ function Discount() {
   return (
     <div className="flex flex-col  bg-[#f0efee] md:flex-row ">
       <img className=" md:w-[720px] " src={foto} alt="" />
-      <div
-        className=" pl-[72px] pr-[160px] pt-[150px] pb-[60px]
-        gap-y-4 md:px-[32px] md:py-[40px] "
-      >
+      <div className=" text-center pt-[50px] gap-y-4 md:pl-[72px] md:pr-[160px] md:pt-[150px] md:justify-center md:items-start">
         <p className="text-lg font-semibold text-[#377DFF] md:text-base  ">
           SALE UP TO 35% OFF
         </p>
