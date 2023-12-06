@@ -5,11 +5,12 @@ import Slider from "./components/Slider";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Info from "./components/Info";
+import Footer from "../../components/Footer/Footer";
+import Link from "../Home/components/Link";
 
 function Details() {
   const params = useParams();
   const [product, setProduct] = useState(null);
-  console.log("product: ", product);
 
   async function getSingleProduct() {
     const response = await axios.get(
@@ -36,7 +37,9 @@ function Details() {
         <Header />
         <BreadCrumbs />
         <Slider product={product} />
-        <Info />
+        <Info product={product} />
+        <Link />
+        <Footer />
       </div>
     </div>
   );

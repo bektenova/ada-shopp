@@ -12,16 +12,26 @@ function Header() {
         <Link to="/">Home</Link>
         <Link to="/shop">Shop</Link>
         <Link to="/product">Product</Link>
-        <Link to="/contacts">Contactssss</Link>
+        <Link to="/contacts">Contact Us </Link>
       </nav>
-      <div className="flex">
+      <div className="flex gap-x-2 items-center">
         <Search className="hidden md:block" color="#000" strokeWidth={1.25} />
-        <UserCircle2
-          className="hidden md:block "
-          color="#000"
-          strokeWidth={1.25}
-        />
-        <ShoppingBag color="#000" strokeWidth={1.25} />
+        <Link
+          to="/sign-up"
+          className="p-1 rounded-full transition duration-500 hover:cursor-pointer hover:bg-gray-200"
+        >
+          <UserCircle2
+            className="hidden md:block "
+            color="#000"
+            strokeWidth={1.25}
+          />
+        </Link>
+        <Link
+          to="/sing-in"
+          className="p-1 rounded-full transition duration-500 hover:cursor-pointer hover:bg-gray-200"
+        >
+          <ShoppingBag color="#000" strokeWidth={1.25} />
+        </Link>
       </div>
     </header>
   );

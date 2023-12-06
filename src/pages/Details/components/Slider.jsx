@@ -1,10 +1,11 @@
 // import { Star } from "lucide-react";
+
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 function Slider({ product }) {
   return (
-    <div>
+    <div className="mt-[16px]">
       <Carousel showThumbs={false} showStatus={false} showIndicators={false}>
         {product.images.map((item) => (
           <div className=" overflow-hidden">

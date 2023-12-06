@@ -1,13 +1,43 @@
 import ProductImage from "../../assets/sofa.png";
 
 import { Heart, Star } from "lucide-react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import clsx from "clsx";
 
 function ProductCard({ product }) {
   const navigate = useNavigate();
+  const [products, setProducts] = useState([]);
+  console.log("products: ", products);
+
+  useEffect(() => {
+    const producktInLocalStorage = JSON.parse(
+      localStorage.getItem("__ada-shop:card")
+    );
+
+    if (producktInLocalStorage) {
+      setProducts(producktInLocalStorage);
+    }
+  }, []);
 
   function handleClick() {
     navigate("/products/" + product.id);
+  }
+
+  function handleSave(event) {
+    event.stopPropagation();
+
+    const previousProduct = JSON.parse(localStorage.getItem("__ada-shop:card"));
+
+    if (previousProduct) {
+      const result = [...previousProduct, product];
+      setProducts(result);
+
+      localStorage.setItem("__ada-shop:card", JSON.stringify(result));
+    } else {
+      setProducts([product]);
+      localStorage.setItem("__ada-shop:card", JSON.stringify([product]));
+    }
   }
 
   return (
@@ -24,8 +54,21 @@ function ProductCard({ product }) {
             <span className="uppercase font-bold bg-white px-3 py-1 rounded">
               new
             </span>
-            <div className=" bg-white p-1.5 rounded-full shadow-xl">
-              <Heart strokeWidth={1} />
+            <div
+              onClick={handleSave}
+              className=" bg-white p-1.5 rounded-full shadow-xl"
+            >
+              <Heart
+                className={clsx(
+                  "transition-[fill] duration-500 hover:stroke-red-500 hover:fill-red-500",
+                  {
+                    "stroke-red-500 fill-red-500": Boolean(
+                      products.find((item) => item.id === product.id)
+                    ),
+                  }
+                )}
+                strokeWidth={1}
+              />
             </div>
           </div>
 
