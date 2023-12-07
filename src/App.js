@@ -5,12 +5,15 @@ import Shop from "./pages/Shop/Shop";
 import Details from "./pages/Details/Details";
 import SingUp from "./pages/SingUp/SingUp";
 import SignIn from "./pages/SingIn/SingIn";
+import { Toaster } from "sonner";
 
 // import SingUp from "./pages/SingUp/SingUp";
 
 function App() {
   return (
     <BrowserRouter>
+      <Toaster position="top-center" richColors />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />

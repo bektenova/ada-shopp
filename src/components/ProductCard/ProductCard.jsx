@@ -4,11 +4,11 @@ import { Heart, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
+import { toast } from "sonner";
 
 function ProductCard({ product }) {
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
-  console.log("products: ", products);
 
   useEffect(() => {
     const producktInLocalStorage = JSON.parse(
@@ -30,10 +30,28 @@ function ProductCard({ product }) {
     const previousProduct = JSON.parse(localStorage.getItem("__ada-shop:card"));
 
     if (previousProduct) {
-      const result = [...previousProduct, product];
-      setProducts(result);
+      const existProduct = previousProduct.find(
+        (item) => item.id === product.id
+      );
 
-      localStorage.setItem("__ada-shop:card", JSON.stringify(result));
+      if (existProduct) {
+        const filteredProducts = previousProduct.filter(
+          (item) => item.title !== existProduct.title
+        );
+
+        localStorage.setItem(
+          "__ada-shop:card",
+          JSON.stringify(filteredProducts)
+        );
+        setProducts(filteredProducts);
+        toast.info("Вы успешно убрали продукт из избранных");
+      } else {
+        const result = [...previousProduct, product];
+        setProducts(result);
+
+        localStorage.setItem("__ada-shop:card", JSON.stringify(result));
+        toast.success("Вы успешно добавили продукт в избранные!");
+      }
     } else {
       setProducts([product]);
       localStorage.setItem("__ada-shop:card", JSON.stringify([product]));
