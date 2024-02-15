@@ -106,7 +106,7 @@ function ProductCard({ product }) {
 
       <div className=" flex flex-col gap-y-1 mt-3">
         <div className="flex gap-x-0.5 ">
-          <Star size={16} color="#000" fill="#000" />
+         <Star size={16} color="#000" fill="#000" /> 
           <Star size={16} color="#000" fill="#000" />
           <Star size={16} color="#000" fill="#000" />
           <Star size={16} color="#000" fill="#000" />

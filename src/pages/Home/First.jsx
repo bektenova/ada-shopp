@@ -7,7 +7,7 @@ import Header from "../../components/Header/Header";
 
 function First() {
   return (
-    <div className="  container mx-auto px-8">
+    <div className="container mx-auto px-8">
       <Header />
       {/* TODO:ИСПРАВИТЬ МАКС ВЫСОТУ */}
       <Carousel showThumbs={false} showStatus={false}>
