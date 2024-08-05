@@ -72,6 +72,9 @@ function ProductCard({ product }) {
             <span className="uppercase font-bold bg-white px-3 py-1 rounded">
               new
             </span>
+            <span className="uppercase font-bold bg-white px-3 py-1 rounded">
+              new
+            </span>
             <div
               onClick={handleSave}
               className=" bg-white p-1.5 rounded-full shadow-xl"
@@ -106,7 +109,7 @@ function ProductCard({ product }) {
 
       <div className=" flex flex-col gap-y-1 mt-3">
         <div className="flex gap-x-0.5 ">
-         <Star size={16} color="#000" fill="#000" /> 
+          <Star size={16} color="#000" fill="#000" />
           <Star size={16} color="#000" fill="#000" />
           <Star size={16} color="#000" fill="#000" />
           <Star size={16} color="#000" fill="#000" />

@@ -37,6 +37,9 @@ function Footer() {
           <p className="text-sm font-thin">
             Copyright © 2023 3legant. All rights reserved
           </p>
+          <p className="text-sm font-thin">
+            Copyright © 2023 3legant. All rights reserved
+          </p>
         </div>
       </div>
     </footer>
